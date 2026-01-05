@@ -12,7 +12,7 @@ chat = ChatOllama(
 )
 
 # Initialize with your local model (e.g., nomic-embed-text)
-embeddings = OllamaEmbeddings(
+function_embedding = OllamaEmbeddings(
     model="nomic-embed-text",
     base_url="http://localhost:11434" # Default Ollama port
 )
@@ -26,10 +26,6 @@ text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size=
 docs = text_splitter.split_documents(documents)
 #print(docs)
 
-function_embedding = OllamaEmbeddings(
-    model="nomic-embed-text",
-    base_url="http://localhost:11434" # Default Ollama port
-)
 
 # alternativa con sklearn vector. store
 persist_path ="./ejemplosk_embedding_db"
