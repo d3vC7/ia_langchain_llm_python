@@ -13,3 +13,5 @@ if __name__ == "__main__":
     resultado = chat.invoke([HumanMessage(content=consulta)])
     history.add_ai_message(resultado.content)
     print(history)
+    print("\n\n\n")
+    print(history.messages) 
